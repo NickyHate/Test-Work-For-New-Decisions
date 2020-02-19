@@ -1,0 +1,643 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #e5e5e5;
+}
+h1 {
+  font-family: Helvetica;
+  font-size: 48px;
+  line-height: 55px;
+  margin-bottom: 88px;
+}
+h2 {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 41px;
+  letter-spacing: 0.03em;
+}
+h3 {
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 21px;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  cursor: pointer;
+}
+.container {
+  position: relative;
+  width: 1440px;
+  margin: 0 auto;
+}
+/* Попап стили */
+.pop-up {
+  position: absolute;
+  opacity: 0;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgb(138, 0, 192);
+  z-index: -10;
+}
+.pop-up__content {
+  z-index: -10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pop-text {
+  font-size: 40px;
+  font-weight: bold;
+  color: rgba(217, 255, 0, 0.774);
+  text-align: center;
+}
+.active-pop {
+  opacity: 1;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* Стили меню */
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 137px;
+}
+.logo img {
+  width: 82px;
+  height: 106px;
+}
+
+.menu-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 46px 0 0;
+  background: #5e5e7b;
+  color: #f2f2f2;
+}
+.menu-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #dcdced;
+  color: #5e5e7b;
+  box-sizing: border-box;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+}
+.menu li {
+  margin-right: 28px;
+  padding: 20px 0 21px;
+}
+.menu li:last-child {
+  margin-right: 0;
+}
+.menu-down .menu li:hover {
+  color: #6f6eff;
+}
+.lang {
+  position: absolute;
+  right: 168px;
+  top: 57px;
+}
+.lang-footer {
+  top: 37px;
+}
+.lang__change {
+  background: #5e5e7b;
+  color: #f2f2f2;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+}
+.lang__change__footer {
+  background: #14141c;
+}
+/* всплывающий блок с проектами */
+.projects-bg {
+  background: #f2f2f2;
+  position: absolute;
+  top: 165px;
+  left: 275px;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: 2s;
+}
+.projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 1000px;
+  margin: 0 auto;
+  color: #5e5e7b;
+}
+.active {
+  z-index: 10;
+  height: auto;
+  opacity: 1;
+  overflow: visible;
+}
+
+.projects__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 19px 67px 16px 0;
+}
+.projects__item img {
+  margin-bottom: 7px;
+}
+#fix-height {
+  margin-top: 20px;
+}
+.projects__item p {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+/* Разработка программного обеспечения */
+.programm-development {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  background: url(img/Mockup.png);
+  background-size: 75% 95%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  text-align: right;
+  padding-top: 50px;
+  height: 811px;
+  margin-right: 143px;
+}
+.programm-development h1 {
+  margin-top: 103px;
+}
+.arrow {
+  position: absolute;
+}
+.arrow-1 {
+  top: 550px;
+  right: 140px;
+}
+.text-content {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+}
+.text-content__description {
+  font-size: 14px;
+  line-height: 16px;
+  margin: 85px 0 16px;
+}
+.text-content__extra-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: flex-end;
+  color: #6f6eff;
+}
+.icon-description {
+  font-size: 18px;
+  line-height: 21px;
+  margin-left: 5px;
+}
+/* Система автоматизации спортивных учреждений */
+.system-avto {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 59px 0 0;
+  background-color: #fff;
+}
+.arrow-2 {
+  top: 104px;
+  right: 452px;
+}
+.system-avto h2 {
+  margin-bottom: 5px;
+}
+.system-avto h3 {
+  margin-bottom: 35px;
+}
+.system-img {
+  width: 1158px;
+  height: 716px;
+  margin: 27px auto 42px;
+}
+.text-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+.text-container p {
+  text-align: left;
+  margin: 0 0 28px;
+}
+/* Електронная система управления очередью */
+.electronic-management {
+  position: relative;
+  background: #f2f2f8;
+  padding: 61px 0 52px;
+  height: 952px;
+  overflow: hidden;
+}
+.arrow-3 {
+  top: 340px;
+  right: 447px;
+}
+.content-manage {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 114px;
+  left: 720px;
+}
+.content-manage h2 {
+  margin-bottom: 25px;
+}
+.content-manage p {
+  font-family: Helvetica;
+  font-size: 14px;
+  line-height: 16px;
+  color: #14141c;
+  margin-bottom: 58px;
+}
+.manage {
+  margin-right: 85px;
+}
+#image-1 {
+  position: absolute;
+  top: 61px;
+  left: 207px;
+  z-index: 1;
+  width: 385px;
+  height: 376px;
+}
+#image-2 {
+  position: absolute;
+  top: 249px;
+  left: -172px;
+  z-index: 0;
+  width: 648px;
+  height: 445px;
+}
+#image-3 {
+  position: absolute;
+  left: 203px;
+  bottom: 52px;
+  z-index: 2;
+  width: 684px;
+  height: 407px;
+}
+/* Разработка сайта салона тутSpa */
+.spa-development {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #14141c;
+  padding: 45px 0 85px;
+  color: #eaf5ff;
+}
+.arrow-4 {
+  width: 300px;
+  top: 334px;
+  left: 607px;
+}
+.arrow-5 {
+  bottom: 181px;
+  right: 328px;
+}
+.spa-development h2 {
+  font-family: Helvetica;
+  font-size: 36px;
+  line-height: 41px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #5e5e7b;
+  margin-bottom: 41px;
+}
+.container-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 66px;
+}
+.position {
+  position: absolute;
+  text-align: center;
+  bottom: 125px;
+  right: 295px;
+}
+.position a {
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 21px;
+  color: #6f6eff;
+}
+/* Мобильное приложение для оператора связи */
+.mobile-app {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  padding: 68px 0 0;
+}
+.arrow-6 {
+  bottom: 450px;
+  right: 445px;
+}
+.mobile-img {
+  width: 827px;
+  height: 986px;
+}
+.mobile-text h2 {
+  margin: 118px 0 90px;
+}
+.mobile-text p {
+  margin-bottom: 107px;
+}
+.mobile {
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #6f6eff;
+  margin-right: 105px;
+}
+/* Платформа с понятным интерфейсом */
+.platform {
+  position: relative;
+}
+.arrow-7 {
+  top: 268px;
+  left: 616px;
+}
+.arrow-8 {
+  top: 557px;
+  left: 595px;
+}
+.arrow-9 {
+  top: 643px;
+  left: 597px;
+}
+.night {
+  position: absolute;
+  top: 514px;
+  left: 588px;
+}
+.day {
+  position: absolute;
+  top: 598px;
+  left: 580px;
+}
+#platform-main {
+  position: absolute;
+  top: 290px;
+  right: 0;
+  width: 800px;
+  height: 711px;
+}
+#platform-1 {
+  position: absolute;
+  top: 349px;
+  left: 216px;
+  width: 190px;
+  height: 180px;
+  z-index: 1;
+}
+#platform-2 {
+  position: absolute;
+  top: 368px;
+  left: 360px;
+  width: 190px;
+  height: 180px;
+  z-index: 1;
+}
+#platform-3 {
+  position: absolute;
+  top: 416px;
+  left: 0;
+  width: 391px;
+  height: 399px;
+  z-index: 0;
+}
+#platform-4 {
+  position: absolute;
+  bottom: 390px;
+  left: 217px;
+  width: 190px;
+  height: 325px;
+  z-index: 1;
+}
+#platform-5 {
+  position: absolute;
+  bottom: 391px;
+  left: 360px;
+  width: 190px;
+  height: 350px;
+  z-index: 1;
+}
+.platform-case {
+  position: absolute;
+  bottom: 495px;
+  left: 566px;
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #6f6eff;
+}
+.up {
+  display: flex;
+  flex-direction: column;
+  background: #14141c;
+  padding: 73px 290px 275px 273px;
+  color: #f2f2f2;
+}
+.up p {
+  margin: 0 0 11px 493px;
+}
+
+.down {
+  background: #f5f5f5;
+  height: 711px;
+}
+/* Разработка сайта */
+.site-development {
+  position: relative;
+  background: url(img/Mockup2.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 886px;
+  padding: 145px 0 0 185px;
+}
+.site-development p {
+  margin: 94px 0 101px;
+}
+.arrow-10 {
+  top: 449px;
+  left: 224px;
+}
+.site-development a {
+  margin-left: 174px;
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #6f6eff;
+}
+/* OneClickPay */
+.pay {
+  position: relative;
+  background: url(img/Mockup1.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 924px;
+  padding: 187px 0 0 176px;
+  color: #fff;
+  box-sizing: border-box;
+}
+.arrow-11 {
+  top: 400px;
+  left: 157px;
+}
+.pay p {
+  margin: 41px 0 49px;
+}
+.pay-icon {
+  margin: 57px 0 0 90px;
+}
+/* Футер */
+footer {
+  position: relative;
+  background: #14141c;
+  color: #f2f2f2;
+  padding: 41px 168px 42px 247px;
+}
+.logo-footer {
+  top: 105px;
+  left: 167px;
+  width: 49px;
+  height: 62px;
+}
+.polygon-footer {
+  position: absolute;
+  top: 163px;
+  left: 263px;
+  width: 9px;
+  height: 23px;
+}
+.active-item {
+  position: absolute;
+  top: 165px;
+  left: 285px;
+  color: #6f6eff;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+.footer-menu {
+  display: flex;
+  flex-direction: row;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+  color: #f2f2f2;
+  margin: 74px 0 0 38px;
+}
+.first-block,
+.last-block,
+.contacts {
+  margin-top: 95px;
+}
+.first-block {
+  margin-right: 87px;
+}
+.block-item {
+  margin-bottom: 10px;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  margin-left: 300px;
+}
+.contacts-title {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+.contact-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 36px;
+}
+.social {
+  display: flex;
+  flex-direction: column;
+  margin-left: 145px;
+}
+.social a {
+  margin-bottom: 25px;
+}
+#arrow-up {
+  position: absolute;
+  bottom: 22px;
+  right: 168px;
+}
+.rights {
+  margin: 116px 0 0 38px;
+}
+.rights p {
+  margin-bottom: 6px;
+}
+.rights a {
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #6f6eff;
+}
