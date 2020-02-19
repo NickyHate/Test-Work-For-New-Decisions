@@ -38,6 +38,8 @@ const projects = document.querySelectorAll(".projects");
 
 const projectsItem = document.querySelectorAll(".projects__item");
 
+const projectsBg = document.querySelectorAll(".projects-bg");
+
 function showSub(event) {
   var target = event.currentTarget;
   target.classList.add("act");
@@ -68,7 +70,6 @@ function changeColor(event) {
   newTarget.children[0].setAttribute("src", "active" + getAtt);
 }
 function returnColor() {
-  debugger;
   for (let i = 0; i < projectsItem.length; i++) {
     var newAtt = projectsItem[i].children[0].getAttribute("src");
     var pattern = /active/;
